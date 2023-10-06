@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./Nav.css";
 import CardComponent from "../Card/CardComponent";
 import { useNavigate } from "react-router-dom";
-import { useFilteredPosts, useFilteredPostsUpdate } from "../PostContext";
 
 function Nav() {
   const Navigate = useNavigate();
@@ -13,8 +12,7 @@ function Nav() {
     Navigate("/validate", { replace: true });
   };
 
-  const filteredPosts=useFilteredPosts();
-  console.log(filteredPosts);
+
 
 
   return (

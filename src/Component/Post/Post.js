@@ -9,7 +9,6 @@ import { useFilteredPosts, useFilteredPostsUpdate, usePostApprove, usePostDeclin
 const Post = () => {
     const location = useLocation();
     const post = location.state?.from;
-    console.log(post);
     var readingDuration = readingTime(post.body);
     var date = formatDate(post.date);
     const navigate = useNavigate();

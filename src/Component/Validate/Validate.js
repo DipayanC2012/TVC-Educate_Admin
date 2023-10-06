@@ -23,8 +23,6 @@ const Validate = () => {
 
   const filteredPostsUnapproved = filteredPosts.filter((post) => post.approved === false);
 
-  console.log(filteredPostsUnapproved);
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
