@@ -32,7 +32,7 @@ const PostContextProvider=({children})=>{
     const [filteredPosts, setFilteredPosts]=useState([]);
 
     async function getPosts() {
-    axios.get(`http://localhost:5000/api/posts`).then((res) => {
+    axios.get(`https://tvc-educate.onrender.com/api/posts`).then((res) => {
     setFilteredPosts(res.data.posts); // Initialize filteredPosts with all posts
     });
   };
@@ -49,7 +49,7 @@ const PostContextProvider=({children})=>{
 
   const handleApprove = async (postId, titleURL) => {
     try {
-      await axios.patch(`http://localhost:5000/api/posts/${titleURL}/${postId}/approve`);
+      await axios.patch(`https://tvc-educate.onrender.com/api/posts/${titleURL}/${postId}/approve`);
       console.log('post approved');
     } catch (error) {
       console.error('Error approving post:', error);
@@ -59,7 +59,7 @@ const PostContextProvider=({children})=>{
   const handleDecline= async (postId, titleURL)=>{
     try {
     // Send a DELETE request to delete the post with the given postId
-    await axios.delete(`http://localhost:5000/api/posts/${titleURL}/${postId}/delete`);
+    await axios.delete(`https://tvc-educate.onrender.com/api/posts/${titleURL}/${postId}/delete`);
     console.log('Post deleted');
   } catch (error) {
     // Handle any errors here
